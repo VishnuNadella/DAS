@@ -5,10 +5,17 @@ __version__ = "2.1"
 
 
 # Required Modules for DAS Implementation
-from pyzbar.pyzbar import decode
+
 import gspread
 import streamlit as st
 from PIL import Image
+import os
+import sys
+import subprocess
+try:
+    from pyzbar.pyzbar import decode
+except:
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'zbar-0.10-cp27-none-win_amd64.whl'])
 
 # Required Credentials for Google Sheets API Connection
 gc = gspread.service_account(filename="das_credentials.json")
