@@ -1,4 +1,3 @@
 gspread==5.0.0
 pyzbar==0.1.8
 streamlit==1.4.0
-zbar==0.10
